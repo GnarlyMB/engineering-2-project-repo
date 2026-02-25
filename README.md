@@ -9,6 +9,8 @@ This is the software that will be implemented into the alarm clock.
 2. Install the proper Arduino app (Arduino Explorer).
 3. Check the pinout blueprint and read the comments 
     in the code to see what needs to be finished.
+4. Create a new branch to work on your chosen issue. 
+5. When finished, commit to your branch and initiate a pull request.
 
 ## Commiting Code: 
 - Please ensure that the commit comment properly explains 
