@@ -2,5 +2,10 @@ clc
 clear
 close all
 
-x = "Hello, world";
-fprintf(x)
+% Make 
+while true
+    t = datetime("now");
+    t.Format = "HH:mm:ss";
+    fprintf('%s\n', string(t))
+    pause(1)
+end
