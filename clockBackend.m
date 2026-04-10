@@ -5,15 +5,29 @@ classdef clockBackend < handle
 
     properties
         state = false
+        time = ""
     end
     events
         toggleState
     end
     methods
-        function outputArg = method1(obj,inputArg)
-            %METHOD1 Summary of this method goes here
-            %   Detailed explanation goes here
-            outputArg = obj.Property1 + inputArg;
+        function returnState = switchState(obj)
+            % if the input is correct, change state to true.
+            x = input;
+            if x == "c"
+                obj.state = true;
+            end 
+            returnState = obj.state;
         end
+        function returnTime = setTime(obj)
+            % if obj.state = true, initiate alarm setup
+            if obj.state == true
+                x = "Hello! Please enter your desired wake up time (formatted as HH:MM): ";
+                obj.time = input(x, "s");
+            end
+
+            returnTime = obj.time;
+        end
+
     end
 end
