@@ -1,7 +1,7 @@
 clc
 clear
 close all
-cb = clockBackend
+cb = clockBackend;
 while true
     % While the clock is running, 
     t = datetime("now");

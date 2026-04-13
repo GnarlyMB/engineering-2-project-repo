@@ -45,11 +45,11 @@ classdef clockBackend < handle
 
             % Get the state switch 
             if obj.state == true
-              setTime
+              setTime()
             end
 
 
-            if datetime("now") == obj.time && 
+            if datetime("now") == obj.time
                 writePosition(s, 1)
             end
         end
