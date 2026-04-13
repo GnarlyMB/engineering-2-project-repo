@@ -29,5 +29,18 @@ classdef clockBackend < handle
             returnTime = obj.time;
         end
 
+        function alarmActivate(obj)
+            % return the state to false once the alarm goes off
+            if obj.state ~= false
+                obj.state = false;
+            end
+        end
+
+        function putItAllTogether = theAlarm(obj)
+            % Putting all of the methods together and activating servo
+            if datetime("now") == obj.time
+            end
+        end
+
     end
 end
