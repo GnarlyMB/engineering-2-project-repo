@@ -1,9 +1,9 @@
 clc
 clear
 close all
-st = 
-% Make 
+cb = clockBackend
 while true
+    % While the clock is running, 
     t = datetime("now");
     t.Format = "HH:mm:ss";
     fprintf('%s\n', string(t))

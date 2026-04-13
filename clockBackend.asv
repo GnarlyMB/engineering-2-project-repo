@@ -19,12 +19,14 @@ classdef clockBackend < handle
             end 
             returnState = obj.state;
         end
-        function setTime(obj)
+        function returnTime = setTime(obj)
             % if obj.state = true, initiate alarm setup
             if obj.state == true
                 x = "Hello! Please enter your desired wake up time (formatted as HH:MM): ";
                 obj.time = input(x, "s");
             end
+
+            returnTime = obj.time;
         end
 
         function alarmActivate(obj)
@@ -34,22 +36,14 @@ classdef clockBackend < handle
             end
         end
 
-        function theAlarm(obj)
+        function putItAllTogether = theAlarm(obj)
             % Putting all of the methods together and activating servo
             % TODO: Once the Arduino is wired, implement the servo start
             % and rotation.
             
             a = arduino;
-            pinout = 'D13';
-            s = servo(a, pinout);
-
-            % Get the state switch 
-            if obj.state == true
-              setTime
-            end
-
-
-            if datetime("now") == obj.time && 
+            s = servo(a, 'D13');
+            if datetime("now") == obj.time
                 writePosition(s, 1)
             end
         end
