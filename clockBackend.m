@@ -38,6 +38,9 @@ classdef clockBackend < handle
 
         function putItAllTogether = theAlarm(obj)
             % Putting all of the methods together and activating servo
+            % TODO: Once the Arduino is wired, implement the servo start
+            % and rotation.
+            
             if datetime("now") == obj.time
             end
         end
